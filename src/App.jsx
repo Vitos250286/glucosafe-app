@@ -146,7 +146,7 @@ const AuthScreen = ({ onLogin }) => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col items-center justify-center p-6 relative overflow-hidden">
+    <div className="min-h-[100dvh] bg-slate-50 flex flex-col items-center justify-center p-6 relative overflow-hidden">
       {/* Background Decor */}
       <div className="absolute top-[-10%] right-[-10%] w-64 h-64 bg-violet-200 rounded-full blur-3xl opacity-30"></div>
       <div className="absolute bottom-[-10%] left-[-10%] w-64 h-64 bg-blue-200 rounded-full blur-3xl opacity-30"></div>
@@ -889,7 +889,7 @@ export default function App() {
   };
 
   if (!isSupabaseReady) {
-      return <div className="min-h-screen flex items-center justify-center text-slate-400 bg-slate-50"><Loader2 className="animate-spin mr-2"/> Загрузка...</div>;
+      return <div className="min-h-[100dvh] flex items-center justify-center text-slate-400 bg-slate-50"><Loader2 className="animate-spin mr-2"/> Загрузка...</div>;
   }
 
   if (!user) return <AuthScreen onLogin={handleLogin} />;
@@ -897,13 +897,13 @@ export default function App() {
   const metrics = calculateMetrics(foodLog, lifestyle);
 
   return (
-    <div className="min-h-screen bg-slate-100 flex justify-center font-sans text-slate-900">
+    <div className="min-h-[100dvh] bg-slate-100 flex justify-center font-sans text-slate-900">
       
       {/* Модальное окно авторов (вставлено сюда) */}
       <AboutModal isOpen={isAboutOpen} onClose={() => setIsAboutOpen(false)} />
 
       {/* Mobile Frame Container */}
-      <div className="w-full max-w-md bg-slate-50 sm:shadow-2xl sm:my-4 sm:rounded-[2.5rem] relative flex flex-col overflow-hidden h-screen sm:h-[90vh]">
+      <div className="w-full max-w-md bg-slate-50 sm:shadow-2xl sm:my-4 sm:rounded-[2.5rem] relative flex flex-col overflow-hidden h-[100dvh] sm:h-[90vh]">
         
         {/* HEADER */}
         <header className="px-6 pt-8 pb-4 z-10 sticky top-0 bg-slate-50/80 backdrop-blur-md flex justify-between items-center">
@@ -960,7 +960,7 @@ export default function App() {
         </main>
 
         {/* FLOATING NAVIGATION */}
-        <div className="absolute bottom-6 left-0 w-full px-6 pointer-events-none z-20">
+        <div className="absolute bottom-10 left-0 w-full px-6 pointer-events-none z-20">
             <nav className="bg-white/90 backdrop-blur-xl border border-white/20 p-2 rounded-3xl flex justify-around items-center shadow-[0_8px_30px_rgb(0,0,0,0.08)] pointer-events-auto max-w-[300px] mx-auto">
                 <button 
                     onClick={() => setCurrentScreen('today')} 
